@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Distributed System Team</title>
+    <script type="text/javascript">
+        function operacion(){
+            var s = document.getElementById("sender").value;
+            var r = document.getElementById("reciver").value;
+            var a = document.getElementById("amount").value;
+            location.href = "http://localhost:10001" + "?sender=" + s + "&reciver=" + r+ "&amount=" + a;
+            location.href = "http://localhost:63342/final%20pro/client2.html?_ijt=ic1b2nppsvmes68fponcmkcvp9" + "?sender=" + s + "&reciver=" + r+ "&amount=" + a;
+        }
+    </script>
+    <style>
+        img{
+            margin-left: 300px;
+            width: 700px;
+            height: 300px;
+            background-image: url("cTs.png");
+            background-size: cover;
+        }
+        #sender,#reciver,#amount{
+            text-align: center;
+            width: 400px;
+            height: 70px;
+        }
+        #send{
+            text-align: center;
+            color: white;
+            background-color: slateblue;
+            font-size: 70px;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+<img src="cTs.png">
+<h1 style="text-align: center;font-size: 70px;color: darkblue;margin-top: 20px">Client</h1>
+<form id="forma1" style="text-align:center;background-color:darkorange;font-size: 40px;margin: 90px 400px;padding-top: 40px;color: #000088">
+    Enter Sender :<input type="text" id="sender">
+    <br>
+    Enter Reciver:<input type="text" id="reciver">
+    <br>
+    Enter Amountt:<input type="number" id="amount">
+    <br>
+    <input type="button" onClick="operacion()" id="send" value="Send">
+</form>
+</body>
+<html>

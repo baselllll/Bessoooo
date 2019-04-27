@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Client2</title>
+    <script>
+        var href = window.top.location.href;
+        console.log(href);
+        function getUrlParam(param, url) {
+            param = param.replace(/([\[\](){}*?+^$.\\|])/g, "\\$1");
+            var regex = new RegExp("[?&]" + param + "=([^&#]*)");
+            url   = url || decodeURIComponent(window.location.href);
+            var match = regex.exec(url);
+            return match ? match[1] : "";
+        }
+        const se = document.getElementById('sen');
+        const re = document.getElementById('rec');
+        const am = document.getElementById('amo');
+        alert("The Sender is : "+ getUrlParam("sender", href));
+        alert("The Reciver is : "+ getUrlParam("reciver", href));
+        alert("The Amount is : "+ getUrlParam("amount", href));
+        se.innerHTML = getUrlParam("sender", href);
+        re.innerHTML = getUrlParam("reciver", href);
+        am.innerHTML = getUrlParam("amount", href);
+    </script>
+</head>
+<body>
+<h1 style="font-size: 100px;margin: 150px 500px;background-color: #fc8c84">Client 2 (Reciver) </h1>
+<p id='sen'></p>
+<p id='rec'></p>
+<p id='amo'></p>
+</body>
+</html>
